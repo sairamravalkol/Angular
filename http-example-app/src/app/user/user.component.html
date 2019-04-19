@@ -1,0 +1,30 @@
+<h2>User Dashboard</h2>
+<div>
+
+  <button (click)="getUsers()">Users</button>
+  
+
+</div>
+<div *ngIf="users">
+  <table>
+    <tr>  <th>Id</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>City</th>
+      <th>Website</th>
+      <th>Company</th></tr>
+    <tr *ngFor="let user of users">
+        <td><button (click)="getUserById(user.id)">{{user.id}}</button></td>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.address.city}}</td>
+        <td>{{user.website}}</td>
+        <td>{{user.company.name}}</td>
+
+    </tr>
+  </table>
+</div>

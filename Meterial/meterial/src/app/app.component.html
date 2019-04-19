@@ -1,0 +1,20 @@
+<div>
+  <mat-toolbar color="warn">
+    <span>Angular Material Tutorial</span>
+    <button mat-icon-button [mat-menu-trigger-for]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <h4>Tables</h4>
+<mat-form-field>
+  <mat-label>select tables</mat-label>
+  <mat-select routerLink="/food.value">
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+  </mat-toolbar>
+  
+
+<router-outlet></router-outlet>
